@@ -1,0 +1,1000 @@
+/* --- Variables y Estilos Generales --- */
+:root {
+  --primary-purple: #8B46FF; /* Fondo púrpura/violeta como la foto */
+  --accent-orange: #FF7043;  /* Color del subtítulo del profesional */
+  --text-dark: #2c3e50;
+  --text-muted: #666666;
+  --white: #ffffff;
+  --bg-light: #f8f9fa;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-image: url('pic/fondo1.png');
+  color: var(--text-dark);
+  padding-top: 70px;
+}
+
+/* --- Navbar --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 0.8rem 2rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-purple);
+  text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 25px; /* Asegúrate de que este espacio sea el mismo en todas tus páginas */
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+  color: var(--primary-purple);
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.burger span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-dark);
+  border-radius: 2px;
+}
+
+/* --- Hero (Inicio) --- */
+.hero {
+  height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  
+  /* Aquí agregas tu imagen de fondo */
+  background-image:  url('pic\\fondo1.png');
+  background-size: cover;       /* Hace que la foto cubra todo el espacio */
+  background-position: center;  /* Centra la foto */
+  background-repeat: no-repeat; /* Evita que la foto se repita como mosaico */
+}
+
+/* Y cambiamos el color del texto a blanco para que resalte sobre la foto */
+.hero-content h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  color: #4A235A; /* Un púrpura oscuro para que contraste con la foto */
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #555555; /* Un gris muy clarito/blanco */
+}
+/* --- Layout Contenedor Estándar --- */
+.page-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+/* Tamaño y espaciado del logo del inicio */
+.hero-logo {
+  width: 220px; /* Puedes achicar o agrandar este número según necesites */
+  height: auto;
+  margin-bottom: 1rem; /* Separa un poco el logo del título */
+}
+
+/* --- Botón "Solicitar Turno" (Efecto Uiverse) --- */
+.box {
+  display: inline-block;
+  padding: 14px 28px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  background: transparent;
+  text-transform: uppercase;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #4A235A; /* Color púrpura alineado con la marca */
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: .5s linear;
+  margin-top: 1rem;
+}
+
+.box:before {
+  position: absolute;
+  content: '';
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 100%;
+  border-bottom: 4px solid transparent;
+  border-left: 4px solid transparent;
+  box-sizing: border-box;
+  transform: translateX(100%);
+}
+
+.box:after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  border-top: 4px solid transparent;
+  border-right: 4px solid transparent;
+  box-sizing: border-box;
+  transform: translateX(-100%);
+}
+
+.box:hover {
+  box-shadow: 0 5px 15px rgba(74, 35, 90, 0.25);
+  color: #4A235A;
+}
+
+.box:hover:before {
+  border-color: #4A235A;
+  height: 100%;
+  transform: translateX(0);
+  transition: .3s transform linear, .3s height linear .3s;
+}
+
+.box:hover:after {
+  border-color: #4A235A;
+  height: 100%;
+  transform: translateX(0);
+  transition: .3s transform linear, .3s height linear .5s;
+}
+
+/* --- Sección Profesionales (Estilo exacto a tu imagen) --- */
+.our-people-section {
+  min-height: calc(100vh - 70px);
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.our-people-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #4A235A; /* Color púrpura alineado con la marca */
+}
+
+.our-people-header p {
+  max-width: 600px;
+  margin: 0 auto 4rem auto;
+  font-size: 1.05rem;
+  opacity: 0.9;
+}
+
+.people-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Card exacta a la captura */
+.person-card {
+  background: var(--white);
+  color: var(--text-dark);
+  border-radius: 35px; /* Bordes muy redondeados como la imagen */
+  padding: 0 2rem 2.5rem 2rem;
+  width: 320px;
+  position: relative;
+  margin-top: 50px; /* Margen superior para que sobresalga la foto */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.person-card .avatar-wrapper {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-top: -60px; /* Eleva la foto por encima de la tarjeta */
+  margin-bottom: 1.2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background: var(--white);
+  image-rendering: -webkit-optimize-contrast; 
+    backface-visibility: hidden;
+}
+
+.person-card .avatar-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.person-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.person-card .role {
+  color: var(--accent-orange);
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.person-card .bio {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+/* Redes Sociales dentro de la tarjeta */
+.person-card .social-icons {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.person-card .social-icons a {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #FFF0EB;
+  color: var(--accent-orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: background 0.3s, color 0.3s;
+}
+
+.person-card .social-icons a:hover {
+  background: var(--accent-orange);
+  color: var(--white);
+}
+
+/* --- Servicios --- */
+.especialidades h2, .contact-section h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 2.5rem;
+}
+
+
+
+.grid-services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.8rem;
+}
+
+.service-card {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-card h3 {
+  color: var(--primary-purple);
+  margin-bottom: 0.8rem;
+}
+
+/* --- Contacto --- */
+
+.contact-section {
+  min-height: calc(100vh - 70px);
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  word-break: break-all;
+overflow-wrap: break-word;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 92%;
+  margin: 0 auto;
+  gap: 2.5rem;
+  background: rgba(255, 255, 255, 0.9); /* Fondo blanco traslúcido para leer bien */
+  backdrop-filter: blur(5px); /* Efecto cristal desenfocado moderno */
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  max-width: 1100px;
+  width: 100%;
+}
+.contact-layout h2,
+.contact-layout h3 {
+  color: #4A235A;
+  margin-bottom: 1.5rem;
+}
+
+.contact-layout button {
+  background-color: #4A235A;
+  color: #ffffff;
+  border: none;
+  padding: 14px 24px;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+}
+
+.contact-layout button:hover {
+  background-color: #6C5CE7;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(74, 35, 90, 0.25);
+}
+.contact-info p {
+  margin-bottom: 0.8rem;
+}
+
+.map-container {
+  margin-top: 1.5rem;
+  height: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+input, textarea {
+  font-family: inherit;
+  padding: 0.8rem;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  outline: none;
+}
+
+input:focus, textarea:focus {
+  border-color: var(--primary-purple);
+}
+
+.form-feedback {
+  font-size: 0.88rem;
+}
+.form-feedback.success { color: #2ECC71; }
+.form-feedback.error { color: #E74C3C; }
+
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 2rem 1rem; /* Añade un respiro a los costados */
+  }
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .burger { display: flex; }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    background: var(--white);
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem 0;
+    display: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.active { display: flex; }
+  .contact-layout { grid-template-columns: 1fr; }
+  .hero-content h1 { font-size: 2.2rem; }
+}
+
+/* --- Botón dentro de las tarjetas de servicios --- */
+.service-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Esto empuja el botón siempre hacia abajo */
+}
+
+.service-btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 10px 18px;
+  background-color: #f4ecf7; /* Un fondo púrpura muy suave y sutil */
+  color: #4A235A;           /* El color de tu marca */
+  border-radius: 6px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.service-btn:hover {
+  background-color: #4A235A; /* Al pasar el mouse se invierten los colores */
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(74, 35, 90, 0.2);
+}
+
+/* --- Ajustes Responsive para Celulares --- */
+@media (max-width: 768px) {
+  /* Achicamos los títulos principales en móviles */
+  h1, .hero-content h1, .profesionales-section h1, .contact-section h1 {
+    font-size: 2.2rem !important;
+    line-height: 1.2;
+  }
+
+  /* Reducimos los paddings de las secciones para aprovechar el ancho */
+  .profesionales-section, .contact-section, .hero {
+    padding: 2rem 1rem !important;
+  }
+
+  /* Hacemos que las tarjetas ocupen todo el ancho disponible */
+  .profesional-card, .contact-layout {
+    width: 100%;
+    padding: 1.5rem;
+  }
+}
+
+/* --- Posicionar el menú flotante abajo a la derecha en todas las páginas --- */
+.floating-social-menu.example-2 {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  flex-direction: column; /* Apila los botones de forma vertical */
+  gap: 15px;             /* Espacio entre cada botón */
+  z-index: 9999;         /* Siempre por encima del contenido */
+  margin: 0;
+  padding: 0;
+}
+
+/* From Uiverse.io by wilsondesouza */ 
+ul {
+  list-style: none;
+}
+
+.example-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.example-2 .icon-content {
+  margin: 0 10px;
+  position: relative;
+}
+.example-2 .icon-content .tooltip {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 5px;
+  opacity: 0;
+  visibility: hidden;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+.example-2 .icon-content:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  top: -50px;
+}
+.example-2 .icon-content a {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: #4d4d4d;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+.example-2 .icon-content a:hover {
+  box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
+}
+.example-2 .icon-content a svg {
+  position: relative;
+  z-index: 1;
+  width: 30px;
+  height: 30px;
+}
+.example-2 .icon-content a:hover {
+  color: white;
+}
+.example-2 .icon-content a .filled {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #000;
+  transition: all 0.3s ease-in-out;
+}
+.example-2 .icon-content a:hover .filled {
+  height: 100%;
+}
+
+.example-2 .icon-content a[data-social="whatsapp"] .filled,
+.example-2 .icon-content a[data-social="whatsapp"] ~ .tooltip {
+  background-color: #128c7e;
+}
+
+.example-2 .icon-content a[data-social="facebook"] .filled,
+.example-2 .icon-content a[data-social="facebook"] ~ .tooltip {
+  background-color: #3b5998;
+}
+.example-2 .icon-content a[data-social="instagram"] .filled,
+.example-2 .icon-content a[data-social="instagram"] ~ .tooltip {
+  background: linear-gradient(
+    45deg,
+    #405de6,
+    #5b51db,
+    #b33ab4,
+    #c135b4,
+    #e1306c,
+    #fd1f1f
+  );
+}
+.example-2 .icon-content a[data-social="youtube"] .filled,
+.example-2 .icon-content a[data-social="youtube"] ~ .tooltip {
+  background-color: #ff0000;
+}
+
+/* --- Header Moderno y Fijo (Sticky Header) --- */
+.main-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.main-header .navbar {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Estilos para el contenedor del logo */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.logo-img {
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 50%; /* Si quieres que el logo sea circular, déjalo; si es cuadrado, cámbialo a 8px */
+}
+
+.logo-text {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #4a2e5d; /* Tono acorde a tu paleta institucional */
+}
+
+/* Enlaces de navegación del header */
+.main-header .nav-links {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.main-header .nav-links a {
+  text-decoration: none;
+  color: #333333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.main-header .nav-links a:hover {
+  color: #7b4397; /* Color lila/violeta al pasar el mouse */
+}
+
+#professionals-grid, .professionals-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.person-card {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Asegurar que la sección y los títulos tengan espacio correcto */
+.professionals-section, .professionals-container {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.professionals-section h2, .professionals-container h2 {
+  font-size: 1.8rem;
+  color: #4a2e5d;
+  margin-bottom: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+/* --- Sección FAQ --- */
+.faq-section {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.faq-section h2 {
+  font-size: 2rem;
+  color: #4a2e5d;
+  margin-bottom: 30px;
+}
+
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: left;
+}
+
+.faq-item {
+  background: #ffffff;
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  border-left: 4px solid #7b4397; /* Toque de color institucional */
+}
+
+.faq-item h3 {
+  font-size: 1.1rem;
+  color: #333333;
+  margin-bottom: 8px;
+}
+
+.faq-item p {
+  font-size: 0.95rem;
+  color: #666666;
+  line-height: 1.5;
+}
+
+.nav-faq-btn {
+  background-color: transparent;
+  border: 1.5px solid #7b4397;
+  padding: 6px 14px;
+  border-radius: 20px;
+  color: #4a2e5d !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.nav-faq-btn:hover {
+  background-color: #7b4397;
+  color: #ffffff !important;
+}
+
+/* Ajuste para que los botones flotantes no tapen el contenido en celulares */
+.floating-buttons, .whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 15px;
+  z-index: 1000;
+}
+
+.grid-recursos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    justify-items: center;
+}
+
+.recurso-card {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+    transition: transform 0.3s ease;
+}
+
+.recurso-card:hover {
+    transform: translateY(-5px);
+}
+
+.recurso-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.recurso-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.recurso-info h3 {
+    color: #2d3436;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.recurso-info p {
+    color: #636e72;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.btn-descargar {
+    display: inline-block;
+    background-color: #ff6b6b;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.btn-descargar:hover {
+    background-color: #ff5252;
+}
+
+.logo img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #2d3436;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Corrección de la sección de infografías para igualar el espaciado y color */
+.container-seccion {
+    max-width: 1100px;
+    margin: 60px auto 40px auto; /* Agrega más espacio superior para que no choque con la barra */
+    padding: 0 20px;
+    text-align: center;
+}
+
+.container-seccion h1 {
+    color: #3b2352;; /* Color de letra oscuro idéntico al de las demás secciones */
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.subtit-seccion {
+    color: #636e72; /* Gris suave uniforme */
+    font-size: 1rem;
+    margin-bottom: 40px;
+}
+
+/* Contenedor estilo Post de Instagram en versión clara */
+.instagram-card {
+    background: #ffffff;
+    color: #2d3436;
+    border-radius: 16px;
+    border: 1px solid #e1e8ed;
+    max-width: 480px;
+    width: 100%;
+    margin: 0 auto 30px auto;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.instagram-card:hover {
+    transform: translateY(-4px);
+}
+
+/* Cabecera del post clara */
+.ig-header {
+    display: flex;
+    align-items: center;
+    padding: 14px 16px;
+    background: #ffffff;
+    border-bottom: 1px solid #f1f2f6;
+}
+
+.ig-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 12px;
+    border: 1px solid #e1e8ed;
+}
+
+.ig-username {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #3b2352; /* El violeta institucional de tus títulos */
+}
+
+/* Contenedor de la foto o video */
+.ig-media-container {
+    width: 100%;
+    background: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 500px;
+    overflow: hidden;
+}
+
+.ig-media {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Al final de tu archivo style.css */
+.ig-media {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+    display: block;
+    cursor: pointer;
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.modal-content img {
+    width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.cerrar-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+}
+
+.cerrar-modal:hover {
+    color: #ff6b6b;
+}
