@@ -13,7 +13,8 @@ const services = [
   { id: 4, title: "Fonoaudiología", desc: "Prevención, evaluación y tratamiento de alteraciones en la comunicación y el lenguaje." },
   { id: 5, title: "Nutrición", desc: "Planes alimentarios personalizados orientados a la salud integral." },
   { id: 6, title: "Apoyo Escolar", desc: "Acompañamiento pedagógico para fortalecer el rendimiento académico." },
-  { id: 7, title: "Talleres Terapéuticos", desc: "Espacios grupales diseñados específicamente para niños, adolescentes y adultos mayores." }
+  { id: 7, title: "Talleres Terapéuticos", desc: "Espacios grupales diseñados específicamente para niños, adolescentes y adultos mayores." },
+  { id: 8, title: "Pediatria", desc: "Atención médica especializada en la salud infantil." }
 ];
 
 const professionalsList = [
@@ -70,6 +71,14 @@ const professionalsList = [
     specialty: "Lic. En Fonoaudiología", 
     photo: "pic/valeria_karuchek.jpeg", 
     bio: "Especializada en la prevención, evaluación y tratamiento de alteraciones en la comunicación, el lenguaje, el habla y la audición. Su enfoque terapéutico busca brindar herramientas funcionales para mejorar la calidad de vida y la expresión de cada paciente.  ",
+  },
+
+  { 
+    id: 8, 
+    name: "Yelen Da Luz ", 
+    specialty: "Medica Pediatra", 
+    photo: "pic/yelen_daluz.jpeg", 
+    bio: "Dedicada al cuidado integral de la salud infantil, acompañando el crecimiento y desarrollo de niños y niñas desde sus primeros meses de vida. Brinda atención, seguimiento y orientación a las familias, promoviendo la prevención, el bienestar y hábitos saludables en cada etapa de la infancia.",
   },
 ];
 
@@ -271,6 +280,7 @@ const infografiasList = [
     autor: "Centro Psi",
     avatar: "pic/logo_psi.jpg",
   },
+
   
 ];
 
